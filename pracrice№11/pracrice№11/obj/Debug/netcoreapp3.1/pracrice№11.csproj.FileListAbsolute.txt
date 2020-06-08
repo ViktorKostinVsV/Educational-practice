@@ -1,0 +1,11 @@
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\bin\Debug\netcoreapp3.1\pracrice№11.exe
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\bin\Debug\netcoreapp3.1\pracrice№11.deps.json
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\bin\Debug\netcoreapp3.1\pracrice№11.runtimeconfig.json
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\bin\Debug\netcoreapp3.1\pracrice№11.runtimeconfig.dev.json
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\bin\Debug\netcoreapp3.1\pracrice№11.dll
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\bin\Debug\netcoreapp3.1\pracrice№11.pdb
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\obj\Debug\netcoreapp3.1\pracrice№11.csprojAssemblyReference.cache
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\obj\Debug\netcoreapp3.1\pracrice№11.AssemblyInfoInputs.cache
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\obj\Debug\netcoreapp3.1\pracrice№11.AssemblyInfo.cs
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\obj\Debug\netcoreapp3.1\pracrice№11.dll
+C:\Users\vit9i\OneDrive\Документы\GitHub\Educational-practice\pracrice№11\pracrice№11\obj\Debug\netcoreapp3.1\pracrice№11.pdb
