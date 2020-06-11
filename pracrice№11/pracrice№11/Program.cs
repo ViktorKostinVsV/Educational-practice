@@ -5,34 +5,24 @@ namespace pracrice_11
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-
-            Console.Write("Введите текст: ");
-            StringBuilder builder = new StringBuilder(Console.ReadLine());
-
-            builder = Encrypt(builder, 1);
-
-            Console.WriteLine(builder);
-
-            builder = Decrypt(builder, 1);
-
-            Console.WriteLine(builder);
-
-        }
-
+        // Кодируем заданный текст.
         static StringBuilder Encrypt(StringBuilder builder, int n)
         {
+            // Цикл для сдвига кодирования.
             for (int j = 0; j < n; j++)
             {
+                // Цикл для замены букв.
                 for (int i = 0; i < builder.Length; i++)
                 {
+                    // Проверяем буквы русского алфавита.
                     if (builder[i] >= (char)1040 && builder[i] < (char)1045 || (builder[i] >= (char)1046 && builder[i] < (char)1071)
                         || (builder[i] >= (char)1072 && builder[i] < (char)1077 || (builder[i] >= (char)1078 && builder[i] < (char)1103)))
                     {
                         builder[i]++;
                     }
-                    else if (builder[i] == (char)1071)
+
+                    // Замена граничных букв.
+                    else if (builder[i] == (char)1071)  
                     {
                         builder[i] = 'А';
                     }
@@ -62,17 +52,23 @@ namespace pracrice_11
             return builder;
         }
 
+        // Декодируем заданный текст.
         static StringBuilder Decrypt(StringBuilder builder, int n)
         {
+            // Цикл для сдвига декодирования.
             for (int j = 0; j < n; j++)
             {
+                // Цикл для замены букв.
                 for (int i = 0; i < builder.Length; i++)
                 {
+                    // Проверяем буквы русского алфавита.
                     if (builder[i] > (char)1040 && builder[i] <= (char)1045 || (builder[i] > (char)1046 && builder[i] <= (char)1071)
                         || (builder[i] > (char)1072 && builder[i] <= (char)1077 || (builder[i] > (char)1078 && builder[i] <= (char)1103)))
                     {
                         builder[i]--;
                     }
+
+                    // Замена граничных букв.
                     else if (builder[i] == (char)1040)
                     {
                         builder[i] = 'Я';
@@ -102,6 +98,20 @@ namespace pracrice_11
 
             return builder;
         }
-    }
 
+        static void Main(string[] args)
+        {
+
+            Console.Write("Введите текст: ");
+            StringBuilder builder = new StringBuilder(Console.ReadLine());
+
+            builder = Encrypt(builder, 1);
+
+            Console.WriteLine(builder);
+
+            builder = Decrypt(builder, 1);
+
+            Console.WriteLine(builder);
+        }      
+    }
 }
