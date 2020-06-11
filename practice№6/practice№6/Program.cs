@@ -42,6 +42,8 @@ namespace practice_6
 
             Console.WriteLine();
         }
+
+        // Рекурсивная функция, нахождения элемента последовательности.
         static int Function(int a)
         {
             int result;
@@ -63,20 +65,6 @@ namespace practice_6
                 result = 13 * Function(a - 1) - 10 * Function(a - 2) + Function(a - 3);
                 return result;
             }
-        }
-
-        static void Check(int[] array)
-        {
-            bool check = true;
-            for(int i = 3; i < array.Length; i = i + 2)
-            {
-                if (array[i] < array[i - 2])
-                {
-                    check = false;
-                    break;
-                }
-            }
-            Console.WriteLine("Четные элементы образуют возрастающую подпоследовательность: " + check);
         }
     }
 }
