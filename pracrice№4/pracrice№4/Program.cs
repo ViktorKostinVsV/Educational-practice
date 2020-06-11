@@ -4,30 +4,19 @@ namespace pracrice_4
 {
     class Program
     {
+        // Возвращает значение функции.
         static double MyFunction(double x)
         {
             double func = Math.Pow(x,3)-(0.2*Math.Pow(x,2))-(0.2*x)-1.2;
             return func;
         }
 
-        static double Dif(double x)
-        {
-            double dif = (3 * Math.Pow(x, 2)) - (0.4 * x) - 1.4;
-            return dif;
-        }
-
-        static double Dif2(double x)
-        {
-            double dif2 = (6 * x) - 1.8;
-            return dif2;
-        }
-
         static void Main(string[] args)
         {
-            double x0, xn;
-            double a = 1; 
-            double b = 1.5;
-            double eps;
+            double x0;      // Временная переменная.
+            double a = 1;   // Левая граница отрезка.
+            double b = 1.5; // Правая граница отрезка.
+            double eps;     // Значение эпсилон.
 
             Console.Write("Введите Эпсилон: ");
             eps = double.Parse(Console.ReadLine());
@@ -39,14 +28,17 @@ namespace pracrice_4
                 b = x0;
             }
 
+            // Если f(a)*f(b)>0 корней нет.
             if (MyFunction(a) * MyFunction(b) > 0)
             {
                 Console.WriteLine("Корней нет");
             }
             else
             {
+                // находим середину отрезка.
                 x0 = (a + b) / 2;
 
+                // Проверяем на какой части отрезка находится корень.
                 if (MyFunction(a) * MyFunction(x0) < 0)
                 {
                     b = x0;
@@ -56,6 +48,7 @@ namespace pracrice_4
                     a = x0;
                 }
 
+                // Повторяем пока |b-a|>eps.
                 while (Math.Abs(b - a) > eps)
                 {
                     x0 = (a + b) / 2;
