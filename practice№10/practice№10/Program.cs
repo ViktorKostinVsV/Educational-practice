@@ -12,12 +12,15 @@ namespace practice_10
             public Tree right;
             static public int count = 0;
 
+            // Пустой конструктор.
             public Tree()
             {
                 data = default;
                 left = null;
                 right = null;
             }
+
+            // Конструктор с аргументом типа int.
             public Tree(int d)
             {
                 data = d;
@@ -25,6 +28,7 @@ namespace practice_10
                 right = null;
             }
 
+            // Создаем дерево.
             static public Tree IdealTree(int size, Tree p)
             {
 
@@ -48,6 +52,7 @@ namespace practice_10
                 return r;
             }
 
+            // Уничтожаем дерево.
             static public Tree Destroy(Tree p)
             {
                 if (p != null)
@@ -62,6 +67,7 @@ namespace practice_10
                 return p;
             }
 
+            // Вывод дерева.
             static public void ShowTree(Tree p, int l)
             {
                 if (p != null)
@@ -88,6 +94,7 @@ namespace practice_10
         static void Main(string[] args)
         {
             Tree tree = new Tree();
+            Console.WriteLine("Создание дерева...");
             tree = Tree.IdealTree(10, tree);
 
             Tree.ShowTree(tree,2);
