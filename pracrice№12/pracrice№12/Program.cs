@@ -4,9 +4,10 @@ namespace pracrice_12
 {
     class Program
     {
-        static int count = 0;
-        static int count2 = 0;
+        static int count = 0;   // Счетчик перемещений.
+        static int count2 = 0;  // Счетчик сравниваний.
 
+        // Добавление элементов в Пирамиду.
         static int AddInPyramid(int[] array, int i, int N)
         {
             int imax;
@@ -35,6 +36,7 @@ namespace pracrice_12
             return i;
         }
 
+        // Сортируем пирамидой.
         static void Pyramid(int[] array, int n)
         {
             for (int i = n / 2 - 1; i >= 0; --i)
@@ -65,10 +67,12 @@ namespace pracrice_12
             }
         }
 
+        // Сортируем методом подсчета.
         static void CountingSort(int[] array)
         {
             var min = array[0];
             var max = array[0];
+
             foreach (int element in array)
             {
                 
@@ -106,6 +110,7 @@ namespace pracrice_12
             }
         }
 
+        // Создаем массив.
         static int[] MakeArray(int c)
         {
             Random rnd = new Random();
@@ -119,6 +124,7 @@ namespace pracrice_12
             return mas;
         }
 
+        // Создаем отсортированный массив.
         static int[] MakeSortedArray(int c)
         { 
             int[] mas = new int[c];
@@ -131,6 +137,7 @@ namespace pracrice_12
             return mas;
         }
 
+        // Создаем массив отсортированный в обратном порядке.
         static int[] MakeUnsortedArray(int c)
         {
             int[] mas = new int[c];
@@ -143,6 +150,7 @@ namespace pracrice_12
             return mas;
         }
 
+        // Выводим массив на экран.
         static void ShowArray(int[] array)
         {
             foreach(int i in array)
