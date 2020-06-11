@@ -4,10 +4,11 @@ namespace practice_8
 {
     class Program
     {
-        static bool cheak = true;
-        static char[] colors;
-        static int[][] array;       
+        static bool cheak = true;   // Проверка на двудольность.
+        static char[] colors;       // Массив для окраски вершин.
+        static int[][] array;       // Матрица смежности.
 
+        // Метод для создания массива.
         static int[,] MakeArray(int n)
         {
             Console.WriteLine("Пишите связь сдругими вершинами  через пробел, если связь  есть пишите 1, иначе 0.");
@@ -56,6 +57,7 @@ namespace practice_8
             return array;
         }
 
+        // Метод для создания равнного массива [вершина][с какими вершинами связаны]
         static int[][] MainArray(int[,] array)
         {
             int nums = 0;
@@ -89,22 +91,28 @@ namespace practice_8
             return mainArray;
         }
 
+        // Рекурсивный метод для окраски вершин.
         static void Method(int point, char color)
         {
+            // Проверяем не окрашена ли вершина.
             if (colors[point] == 'o')
             {
-
+                // Окрашиваем вершину.
                 colors[point] = color;
 
+                // Меняем цвет на противоположный.
                 char newColor = color == '1' ? '2' : '1';
 
+                // Цикл перебирающий соседей.
                 foreach (int i in array[point])
                 {
+                    // Если цвета совпадают, то граф не двудольный.
                     if (colors[point] == colors[i])
                     {
                         cheak = false;
                     }
 
+                    // Если следующий элемент не окрашен.
                     if (colors[i] == 'o')
                     {
                         Method(i, newColor);
