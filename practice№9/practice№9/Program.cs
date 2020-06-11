@@ -6,6 +6,7 @@ namespace practice_9
     {
         static collection MyCollection = new collection();
 
+        // Двунаправленного зацикленного списка.
         public class Item
         {
             public Item(int data)
@@ -16,6 +17,7 @@ namespace practice_9
             public Item Next { get; set; }
         }
 
+        // двунаправленный зацикленный список.
         public class collection
         {
             public Item head; // головной/первый элемент
@@ -90,26 +92,9 @@ namespace practice_9
 
             public bool IsEmpty { get { return count == 0; } }
         }
-        static void Main(string[] args)
-        {
-            //int n = int.Parse(Console.ReadLine());
 
-            Add(MyCollection,5);
-
-            Console.WriteLine(MyCollection.tail.Data);
-            Console.WriteLine(MyCollection.head.Data);
-
-            Console.WriteLine(Contains(MyCollection.head, 15));
-            Console.WriteLine(Contains(MyCollection.head, 5));
-
-            Delete(MyCollection,6);
-
-            Console.WriteLine(MyCollection.tail.Data);
-            Console.WriteLine(MyCollection.head.Data);
-
-        }
-
-        static void Add(collection collection ,int n)
+        // Рекурсивный метод добавления в коллекцию.
+        static void Add(collection collection, int n)
         {
             if (n > 0)
             {
@@ -122,16 +107,18 @@ namespace practice_9
             }
         }
 
-        static void Delete(collection collection,int n)
+        // Рекурсивный метод удаления в коллекцию.
+        static void Delete(collection collection, int n)
         {
             if (n > 1)
             {
-                Delete(collection,n - 1);
+                Delete(collection, n - 1);
             }
 
             collection.Remove(n);
         }
 
+        // Проверка на совпадение элементов.
         static public bool Contains(Item current, int data)
         {
             if (current.Equals(MyCollection.tail))
@@ -151,5 +138,26 @@ namespace practice_9
                 return false;
             }
         }
+
+        static void Main(string[] args)
+        {
+            //int n = int.Parse(Console.ReadLine());
+
+            Add(MyCollection,10);
+
+            Console.WriteLine(MyCollection.tail.Data);
+            Console.WriteLine(MyCollection.head.Data);
+
+            Console.WriteLine(Contains(MyCollection.head, 15));
+            Console.WriteLine(Contains(MyCollection.head, 5));
+
+            Delete(MyCollection,5);
+
+            Console.WriteLine(MyCollection.tail.Data);
+            Console.WriteLine(MyCollection.head.Data);
+
+        }
+
+        
     }
 }
