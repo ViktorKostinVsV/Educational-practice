@@ -8,7 +8,9 @@ namespace practice_7
 
         static void Main()
         {
+            Console.Write("Введите N: ");
             int N = int.Parse(Console.ReadLine());
+            Console.Write("Введите K: ");
             int K = int.Parse(Console.ReadLine());
 
             int[] array = new int[N];
@@ -18,17 +20,21 @@ namespace practice_7
                 array[i] = i + 1;
             }
 
+            // Вывод первой комбинации.
             Print(array, K);
 
             if (N >= K)
             {
+                // Пока есть новые комбинации.
                 while (Next(array, N, K))
                 {
+                    // Вывод новой комбинации.
                     Print(array, K);
                 }
             }
         }
 
+        // Вывод комбинации.
         static void Print(int[] array, int K)
         {
             Console.Write(num++ + "= ");
@@ -41,6 +47,7 @@ namespace practice_7
             Console.WriteLine(); 
         }
 
+        // Проверка на новую комбинацию.
         static bool Next(int[] array, int N, int K)
         {
             int M = K;
