@@ -1,4 +1,7 @@
-﻿using System;
+/*Граф задан матрицей смежности. 
+Выяснить, является ли он двудольным.*/
+
+using System;
 
 namespace practice_8
 {
